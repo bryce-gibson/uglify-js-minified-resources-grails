@@ -57,7 +57,7 @@ class UglifyEngine {
                     var parsedAst = UglifyJS.parse(codeToMinify, { filename: filename} )
                     parsedAst.figure_out_scope()
 
-                    var compressedAst = parsedAst.transform(UglifyJS.Compressor())
+                    var compressedAst = parsedAst.transform(UglifyJS.Compressor({drop_console: true}))
 """
             if (!options?.noMunge)
                 uglifyCommand += """\
