@@ -18,10 +18,10 @@ class UglifyEngine {
         Context jsContext
 
         try {
-            def uglifyJsSource = new ClassPathResource('/org/grails/plugin/resource/minified/js/uglify/uglify-2.3.6.js', this.class.classLoader)
+            def uglifyJsSource = new ClassPathResource('/org/grails/plugin/resource/minified/js/uglify/uglify.js', this.class.classLoader)
 
             if (!uglifyJsSource.exists())
-                throw new MissingResourceException("Could not find uglify.js", "UglifyEngine", "uglify-2.3.6.js")
+                throw new MissingResourceException("Could not find uglify.js", "UglifyEngine", "uglify.js")
 
             jsContext = Context.enter()
             jsContext.optimizationLevel = -1
